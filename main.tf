@@ -15,7 +15,7 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  cluster_name = "education-eks-${random_string.suffix.result}"
+  cluster_name = "education-eks-cluster"
 }
 
 resource "random_string" "suffix" {
@@ -28,6 +28,10 @@ module "vpc" {
   version = "5.0.0"
 
   name = "education-vpc"
+
+  tags = {
+    Name = "postech-vpc"
+  }
 
   cidr = "10.0.0.0/16"
   azs  = slice(data.aws_availability_zones.available.names, 0, 3)

@@ -7,4 +7,3 @@ Projeto da Pós Tech da FIAP em Software Architecture
 
 ## Descrição do Projeto
 Este módulo é responsável pela estrutura do k8s do módulo de Pedido do nosso sistema de lanchonete.
-
